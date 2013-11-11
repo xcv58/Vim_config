@@ -97,11 +97,14 @@ set laststatus=2
 " set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ %l
 
 
-"不截断单词
+"Don't break a word
 set linebreak
 
-"自动保存读取折叠
-"针对LagreFile失效
+"change default viewdir 
+se viewdir=~/.vim-view
+
+"automatically load fold infomation
+"Do not do something when open a large file
 "autocmd BufWinLeave *.* mkview!
 "autocmd BufWinEnter *.* silent loadview
   " Large files are > 10M
