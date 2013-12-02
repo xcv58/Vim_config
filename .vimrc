@@ -69,7 +69,7 @@ se foldmethod=syntax
 
 "搜索相关
 se hlsearch
-se incsearch
+"se incsearch
 se smartcase
 se ignorecase
 se wrapscan
