@@ -350,32 +350,40 @@ function! MakeViewCheck()
 	endif
 	return 1
 endfunction
-"function DefaultStartup()
-"	silent loadview
-"	if &ft != ''
-"		se syntax=on 
-"	else 
-"		se syntax=off 
-"	endif 
-"	se nonu 
-"	se syntax=off 
-"endfunction
+function DefaultStartup()
+	silent loadview
+	if &ft != ''
+		se syntax=on 
+	else 
+		se syntax=off
+	endif 
+	se nonu 
+	se syntax=off 
+endfunction
 augroup vimrcAutoView
 	autocmd!
 	" Autosave & Load Views.
 	autocmd BufWritePost,BufLeave,WinLeave,BufWinLeave ?* if MakeViewCheck() | mkview | endif
 	"autocmd BufWinEnter ?* if MakeViewCheck() | silent loadview | se syntax=on| se fileencodings=utf-8,ucs-bom,cp936,gb18030,utf-16,big5,gbk,ucs-bom,cp936,latin1 | else | se nonu | se syntax=off | endif
 	autocmd BufWinEnter ?* if MakeViewCheck() |
-				\	silent loadview |
-				\	if &ft != '' |
-				\		se syntax=on |
-				\	else |
-				\		se syntax=off |
-				\	endif |
-				\else |
-				\	se nonu |
-				\	se syntax=off |
-				\endif
+	\	silent loadview |
+	\	if &ft != '' |
+	\ if has("gui_running") |
+	\		se syntax=on |
+	\ else |
+	\   syntax on |
+	\ endif |
+	\	else |
+	\ if has("gui_running") |
+	\		se syntax=off |
+	\ else |
+	\   syntax off |
+	\ endif |
+	\	endif |
+	\else |
+	\	se nonu |
+	\	se syntax=off |
+	\endif
 	"autocmd BufWinEnter ?* if MakeViewCheck() | call DefaultStartup() | else | se nonu | se syntax=off | endif
 	"set fileencodings=utf-8,ucs-bom,cp936,gb18030,utf-16,big5,gbk,ucs-bom,cp936,latin1
 	"		autocmd BufWinEnter ?* if MakeViewCheck() | silent loadview | se nu | se syntax=on | else | se nonu | se syntax=off | endif
