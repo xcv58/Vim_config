@@ -32,11 +32,11 @@ filetype plugin indent on
 
 "缩进
 "auto indent
-set autoindent
+se autoindent
 "c indent
-set cindent
+se cindent
 "smart indent
-set smartindent
+se smartindent
 
 "show tab line
 "se list lcs=tab:\/.
@@ -55,14 +55,11 @@ se ts=2 sw=2
 
 
 "enable fold
-set foldenable
-set foldnestmax=1
-set foldmethod=syntax
+se foldenable
+se foldnestmax=1
+se foldmethod=syntax
 
 
-"显示行号
-"se nu
-"se nonu
 
 "设置当前行高亮，cursorline
 "se cul
@@ -71,15 +68,17 @@ set foldmethod=syntax
 "se cuc
 
 "搜索相关
-set hlsearch
-set incsearch
-set smartcase
-set ignorecase
-set wrapscan
+se hlsearch
+se incsearch
+se smartcase
+se ignorecase
+se wrapscan
 "enable magic matching
 set magic
+
 "show matching bracets
 set showmatch
+
 "启用语法高亮
 "Move to vimrcAutoView
 "syntax enable
@@ -289,18 +288,12 @@ function! s:Median(nums)
 endfunction
 
 
-
-
-
-
-
-
 " Format the status line
 " set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ %l
 
 
 "Don't break a word
-set linebreak
+se linebreak
 
 "change default viewdir 
 se viewdir=~/.vim-view
@@ -352,6 +345,7 @@ function! MakeViewCheck()
 endfunction
 
  function DefaultStartup()
+	 se incsearch
  	silent loadview
  	if &ft != ''
  		call SyntaxOn()
@@ -362,6 +356,7 @@ endfunction
 
  function MiniStartup()
 	 se nonu
+	 se noincsearch
 	 call SyntaxOff()
  endfunction
 
@@ -485,6 +480,4 @@ augroup vimrcAutoView
 		"imap <-> <Plug>Tex_InsertItemOnThisLine    <Alt-I>
 
 		helptags ~/.vim/bundle/vim-latex-1.8.23-20130116.788-git2ef9956/doc
-
-
 
