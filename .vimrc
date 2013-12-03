@@ -69,7 +69,7 @@ se foldmethod=syntax
 
 "搜索相关
 se hlsearch
-"se incsearch
+se incsearch
 se smartcase
 se ignorecase
 se wrapscan
@@ -310,7 +310,7 @@ se viewdir=~/.vim-view
 " bufhidden=unload (save memory when other file is viewed)
 " buftype=nowritefile (is read-only)
 " undolevels=-1 (no undo possible)
-let g:LargeFile = 1024 * 1024 * 30
+let g:LargeFile = 1024 * 1024 * 3
 "let g:LargeFile = 1024 * 1024 * 10
 let g:skipview_files = [
 			\ '[EXAMPLE PLUGIN BUFFER]'
@@ -356,7 +356,7 @@ endfunction
 
  function MiniStartup()
 	 se nonu
-	 se noincsearch
+	 "se noincsearch
 	 call SyntaxOff()
  endfunction
 
