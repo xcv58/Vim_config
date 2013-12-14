@@ -1,7 +1,8 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =5
-let g:netrw_dirhist_1='/Users/xcv58/.vim'
-let g:netrw_dirhist_2='/Users/xcv58/solr-4.5.1/example_1/solr'
-let g:netrw_dirhist_3='/Users/xcv58/.emacs'
-let g:netrw_dirhist_4='/Users/xcv58/.emacs.d'
-let g:netrw_dirhist_5='/Users/xcv58/Dropbox/Buffalo/574/574_project_2'
+let g:netrw_dirhist_cnt =6
+let g:netrw_dirhist_1='/Users/xcv58/Dropbox/Software/MacHome/VIM/.vim/bundle'
+let g:netrw_dirhist_2='/Users/xcv58/Dropbox/Software/MacHome/VIM/.vim'
+let g:netrw_dirhist_3='/Users/xcv58/Dropbox/Software/MacHome/VIM/.vim/plugin'
+let g:netrw_dirhist_4='/Users/xcv58/Dropbox/Software/MacHome/VIM/.vim'
+let g:netrw_dirhist_5='/Users/xcv58/Dropbox/Software/MacHome/VIM/.vim/autoload'
+let g:netrw_dirhist_6='/Users/xcv58/Dropbox/Software/MacHome/VIM/.vim'
