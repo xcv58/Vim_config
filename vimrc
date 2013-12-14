@@ -2,7 +2,7 @@
 set nocompatible
 set nowrap
 filetype off                  " required!
-let root = '~/.vim/bundle/'
+let root = '~/.vim/bundle'
 let src = 'http://github.com/gmarik/vundle.git' 
 
 " let src = '~/.vim/bundle/vundle/.git' 
