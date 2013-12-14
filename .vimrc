@@ -14,7 +14,9 @@ set fileencodings=utf-8,gb18030,gb2312,gbk
 set t_Co=256
 colorscheme elflord
 se guifont=Menlo\ Regular:h28
-se transparency=30
+if has("gui_running")
+	se transparency=30
+endif
 
 "backup tmp directory
 "set nobackup
