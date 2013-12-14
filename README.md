@@ -1,5 +1,6 @@
 Vim config
 ========
+Only work on Vim 7.4 or later!
 
 If you have your own .vimrc, .vim, etc.
 ========
