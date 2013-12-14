@@ -11,7 +11,6 @@ Bundle 'gmarik/vundle'
 Bundle 'nathanaelkane/vim-indent-guides'
 Bundle 'ervandew/supertab'
 Bundle 'jcf/vim-latex'
-Helptags
 
 "" My bundles here:
 ""
