@@ -3,8 +3,8 @@ call pathogen#infect()
 
 "设置字符集
 set encoding=UTF-8
-set langmenu=zh_CN.UTF-8
-language message zh_CN.UTF-8
+"set langmenu=zh_CN.UTF-8
+"language message zh_CN.UTF-8
 set ambiwidth=double
 set fileencodings=utf-8,gb18030,gb2312,gbk
 "se fileencoding=utf-8,gb18030,gbk,utf-16,ucs-bom,big5,latin1
