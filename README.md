@@ -1,4 +1,4 @@
-vim config
+Vim config
 ========
 
 If you have your own .vimrc, .vim, etc.
