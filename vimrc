@@ -484,3 +484,4 @@ augroup vimrcAutoView
 
 		helptags ~/.vim/bundle/vim-latex-1.8.23-20130116.788-git2ef9956/doc
 
+
