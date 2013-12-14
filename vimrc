@@ -1,5 +1,43 @@
-"pathogen
-call pathogen#infect()
+set nocompatible              " be iMproved
+filetype off                  " required!
+
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+" let Vundle manage Vundle
+" required! 
+Bundle 'gmarik/vundle'
+
+Bundle 'nathanaelkane/vim-indent-guides'
+Bundle 'ervandew/supertab'
+Bundle 'jcf/vim-latex'
+Helptags
+
+"" My bundles here:
+""
+"" original repos on GitHub
+"Bundle 'tpope/vim-fugitive'
+"Bundle 'Lokaltog/vim-easymotion'
+"Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
+"Bundle 'tpope/vim-rails.git'
+"" vim-scripts repos
+"Bundle 'L9'
+"Bundle 'FuzzyFinder'
+"" non-GitHub repos
+"Bundle 'git://git.wincent.com/command-t.git'
+"" Git repos on your local machine (i.e. when working on your own plugin)
+"Bundle 'file:///Users/gmarik/path/to/plugin'
+"
+"" ...
+""
+"" Brief help
+"" :BundleList          - list configured bundles
+"" :BundleInstall(!)    - install (update) bundles
+"" :BundleSearch(!) foo - search (or refresh cache first) for foo
+"" :BundleClean(!)      - confirm (or auto-approve) removal of unused bundles
+""
+"" see :h vundle for more details or wiki for FAQ
+"" NOTE: comments after Bundle commands are not allowed.
 
 "设置字符集
 set encoding=UTF-8
@@ -61,8 +99,6 @@ se ts=2 sw=2
 se foldenable
 se foldnestmax=1
 se foldmethod=syntax
-
-
 
 "设置当前行高亮，cursorline
 "se cul
@@ -481,6 +517,5 @@ augroup vimrcAutoView
 		"imap <-> <Plug>Tex_MathCal                 <Alt-C>
 		autocmd FileType tex imap <C-L> <plug>Tex_LeftRight
 		"imap <-> <Plug>Tex_InsertItemOnThisLine    <Alt-I>
-
-		helptags ~/.vim/bundle/vim-latex-1.8.23-20130116.788-git2ef9956/doc
+		helptags ~/.vim/bundle/vim-latex/doc
 
