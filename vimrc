@@ -1,8 +1,27 @@
-set nocompatible              " be iMproved
+" vim -u test/vimrc
+set nocompatible
+set nowrap
 filetype off                  " required!
+let root = '~/.vim/bundle/'
+let src = 'http://github.com/gmarik/vundle.git' 
 
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+" let src = '~/.vim/bundle/vundle/.git' 
+
+" Vundle Options
+" let g:vundle_default_git_proto = 'git'
+
+if !isdirectory(expand(root, 1).'/vundle')
+  exec '!git clone '.src.' '.shellescape(root, 1).'/vundle'
+endif
+
+runtime macros/matchit.vim
+
+exec 'set rtp+='.root.'/vundle'
+
+call vundle#rc(root)
+
+"set rtp+=~/.vim/bundle/vundle/
+"call vundle#rc()
 
 " let Vundle manage Vundle
 " required! 
