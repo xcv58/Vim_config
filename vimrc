@@ -11,7 +11,7 @@ let src = 'http://github.com/gmarik/vundle.git'
 " let g:vundle_default_git_proto = 'git'
 
 if !isdirectory(expand(root, 1).'/vundle')
-  exec '!git clone '.src.' '.root.''/vundle'
+  exec '!git clone '.src.' '.root.'/vundle'
 endif
 
 runtime macros/matchit.vim
