@@ -9,7 +9,7 @@ If you have your own .vimrc, .vim, etc.
 
 Please backup your configuration.
 
-Attention: this configuration's vimrc file is ~/.vim/vimrc. So if you have ~/.vimrc, please rename it.
+Attention: this configuration's vimrc file is ~/.vim/vimrc. So if you have ~/.vimrc, please remove/rename it.
 
 After clone:
 ========
