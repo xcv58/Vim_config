@@ -2,6 +2,8 @@ Vim config
 ========
 Only work on Vim 7.4 or later!
 
+I just test on OS X Version 10.9 and Ubuntu 13.10 x64.
+
 If you have your own .vimrc, .vim, etc.
 ========
 
