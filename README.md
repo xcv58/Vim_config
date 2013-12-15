@@ -19,4 +19,8 @@ or
 ln -s Vim_config ~/.vim
 ```
 
+Then run this command:
+```
+:BundleInstall
+```
 And enjoy!
