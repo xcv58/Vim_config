@@ -28,8 +28,9 @@ call vundle#rc(root)
 Bundle 'gmarik/vundle'
 
 Bundle 'nathanaelkane/vim-indent-guides'
-Bundle 'ervandew/supertab'
 Bundle 'jcf/vim-latex'
+Bundle 'Valloric/YouCompleteMe'
+" Bundle 'ervandew/supertab'
 
 "" My bundles here:
 ""
