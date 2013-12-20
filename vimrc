@@ -536,5 +536,3 @@ augroup vimrcAutoView
 		autocmd FileType tex imap <C-L> <plug>Tex_LeftRight
 		"imap <-> <Plug>Tex_InsertItemOnThisLine    <Alt-I>
 		helptags ~/.vim/bundle/vim-latex/doc
-
-
