@@ -30,7 +30,7 @@ Bundle 'gmarik/vundle'
 Bundle 'nathanaelkane/vim-indent-guides'
 Bundle 'jcf/vim-latex'
 Bundle 'Valloric/YouCompleteMe'
-" Bundle 'ervandew/supertab'
+Bundle 'ervandew/supertab'
 
 "" My bundles here:
 ""
@@ -116,7 +116,7 @@ se ts=2 sw=2
 
 "enable fold
 se foldenable
-se foldnestmax=1
+se foldnestmax=3
 se foldmethod=syntax
 
 "设置当前行高亮，cursorline
@@ -357,6 +357,7 @@ se linebreak
 se viewdir=~/.vim-view
 
 "automatically load fold infomation
+
 "Do not do something when open a large file
 "autocmd BufWinLeave *.* mkview!
 "autocmd BufWinEnter *.* silent loadview
