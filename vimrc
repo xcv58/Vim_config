@@ -31,6 +31,7 @@ Bundle 'nathanaelkane/vim-indent-guides'
 Bundle 'jcf/vim-latex'
 Bundle 'Valloric/YouCompleteMe'
 Bundle 'ervandew/supertab'
+Bundle 'scrooloose/nerdtree'
 
 "" My bundles here:
 ""
@@ -145,9 +146,9 @@ set showmatch
 "不显示右边滚动条
 set guioptions-=r
 
-"显示文件名: 总行数, 总的字符数
+" For statusline
 " set statusline=[%F]%y%r%m%*%=[L:%l/%L,C:%c][%p%%]
-"set statusline=[%F]%y%r%m%*%=[Line:%l/%L,Column:%c][%p%%]
+" set statusline=[%F]%y%r%m%*%=[Line:%l/%L,Column:%c][%p%%]
 "" set statusline=
 "" set statusline+=%<\                       " cut at start
 "" set statusline+=%2*[%n%H%M%R%W]%*\        " flags and buf no
@@ -537,4 +538,6 @@ augroup vimrcAutoView
 		"imap <-> <Plug>Tex_MathCal                 <Alt-C>
 		autocmd FileType tex imap <C-L> <plug>Tex_LeftRight
 		"imap <-> <Plug>Tex_InsertItemOnThisLine    <Alt-I>
-		helptags ~/.vim/bundle/vim-latex/doc
+		if isdirectory(expand(root, 1).'/vim-latex/doc')
+			helptags ~/.vim/bundle/vim-latex/doc
+		endif
