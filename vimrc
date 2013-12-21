@@ -32,6 +32,7 @@ Bundle 'jcf/vim-latex'
 Bundle 'Valloric/YouCompleteMe'
 Bundle 'ervandew/supertab'
 Bundle 'scrooloose/nerdtree'
+Bundle 'The-NERD-Commenter'
 
 "" My bundles here:
 ""
