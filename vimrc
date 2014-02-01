@@ -33,6 +33,7 @@ Bundle 'Valloric/YouCompleteMe'
 Bundle 'ervandew/supertab'
 Bundle 'scrooloose/nerdtree'
 Bundle 'The-NERD-Commenter'
+Bundle 'vim-scripts/taglist.vim'
 
 "" My bundles here:
 ""
