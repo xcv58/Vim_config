@@ -148,11 +148,6 @@ set showmatch
 "不显示右边滚动条
 set guioptions-=r
 
-"Using command-line window
-nnoremap : q:i
-nnoremap / q/i
-nnoremap ? q?i
-
 " For statusline
 " set statusline=[%F]%y%r%m%*%=[L:%l/%L,C:%c][%p%%]
 " set statusline=[%F]%y%r%m%*%=[Line:%l/%L,Column:%c][%p%%]
