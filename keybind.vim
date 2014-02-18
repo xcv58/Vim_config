@@ -1,3 +1,7 @@
+" For NerdTree
+map <F3> :NERDTreeMirror<CR>
+map <F3> :NERDTreeToggle<CR>
+
 " Keybind for switch tabs
 if has("gui_macvim")
 	" Press Ctrl-R to redo

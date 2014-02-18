@@ -45,3 +45,6 @@ so $HOME/.vim/start_type.vim
 
 " For LaTeX
 so $HOME/.vim/latex.vim
+
+" For Keybind
+so $HOME/.vim/Keybind.vim
