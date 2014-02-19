@@ -34,6 +34,8 @@ Bundle 'ervandew/supertab'
 Bundle 'scrooloose/nerdtree'
 Bundle 'The-NERD-Commenter'
 Bundle 'vim-scripts/taglist.vim'
+Bundle 'vim-scripts/L9'
+Bundle 'vim-scripts/FuzzyFinder'
 
 "" original repos on GitHub
 "Bundle 'tpope/vim-fugitive'
