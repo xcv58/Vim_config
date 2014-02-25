@@ -47,4 +47,4 @@ so $HOME/.vim/start_type.vim
 so $HOME/.vim/latex.vim
 
 " For Keybind
-so $HOME/.vim/Keybind.vim
+so $HOME/.vim/keybind.vim
