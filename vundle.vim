@@ -36,7 +36,7 @@ Bundle 'The-NERD-Commenter'
 Bundle 'vim-scripts/taglist.vim'
 Bundle 'vim-scripts/L9'
 Bundle 'vim-scripts/FuzzyFinder'
-Bundle 'jistr/vim-nerdtree-tabs'
+" Bundle 'jistr/vim-nerdtree-tabs'
 
 "" original repos on GitHub
 "Bundle 'tpope/vim-fugitive'
