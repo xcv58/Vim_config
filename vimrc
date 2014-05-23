@@ -19,7 +19,7 @@ se history=65536
 
 "useful file/command completion
 se wildmenu
-se wildmode=list:longest
+se wildmode=list:longest,full
 
 "enable fold
 se foldenable
