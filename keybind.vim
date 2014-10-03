@@ -1,13 +1,23 @@
-" For NerdTree
-map <F3> :NERDTreeMirror<CR>
-map <F3> :NERDTreeToggle<CR>
+" For ctrlp
+nmap <C-o> :CtrlPMixed<CR>
+
+" Leader
+let mapleader="\\"
+
+" Buffers
+map <Leader>d :bn<cr>
+map <C-l> :bn<cr>
+map <Leader>a :bp<cr>
+map <C-h> :bp<cr>
+map <Leader>w :bd<cr>
+" map <C-w> :bd<cr>
 
 " Keybind for switch tabs
 if has("gui_macvim")
 	" Press Ctrl-R to redo
 	noremap <C-R> :redo<CR>
 
-	" Press Ctrl-Tab to switch between open tabs (like browser tabs) to 
+	" Press Ctrl-Tab to switch between open tabs (like browser tabs) to
 	" the right side. Ctrl-Shift-Tab goes the other way.
 	noremap <C-Tab> :tabnext<CR>
 	noremap <C-S-Tab> :tabprev<CR>

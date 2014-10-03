@@ -11,7 +11,7 @@ se fileencodings=utf-8,gb18030,gb2312,gbk
 se backupdir=$HOME/.vim-tmp,$HOME/.tmp,$HOME/tmp,/var/tmp,/tmp
 se directory=$HOME/.vim-tmp,$HOME/.tmp,$HOME/tmp,/var/tmp,/tmp
 
-"change default viewdir 
+"change default viewdir
 se viewdir=$HOME/.vim-view
 
 " set a long history
@@ -35,6 +35,12 @@ se magic
 
 " Vundle
 so $HOME/.vim/vundle.vim
+
+" ctrlp
+so $HOME/.vim/ctrlp.vim
+
+" airline
+so $HOME/.vim/airline.vim
 
 " Display settings
 so $HOME/.vim/display.vim

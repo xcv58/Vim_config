@@ -3,9 +3,9 @@ se nocompatible
 se nowrap
 filetype off                  " required!
 let root = '~/.vim/bundle'
-let src = 'http://github.com/gmarik/vundle.git' 
+let src = 'http://github.com/gmarik/vundle.git'
 
-" let src = '~/.vim/bundle/vundle/.git' 
+" let src = '~/.vim/bundle/vundle/.git'
 
 " Vundle Options
 " let g:vundle_default_git_proto = 'git'
@@ -24,7 +24,7 @@ call vundle#rc(root)
 " call vundle#rc()
 
 " let Vundle manage Vundle
-" required! 
+" required!
 Bundle 'gmarik/vundle'
 
 Bundle 'nathanaelkane/vim-indent-guides'
@@ -35,7 +35,8 @@ Bundle 'scrooloose/nerdtree'
 Bundle 'The-NERD-Commenter'
 Bundle 'vim-scripts/taglist.vim'
 Bundle 'vim-scripts/L9'
-Bundle 'vim-scripts/FuzzyFinder'
+Bundle 'bling/vim-airline'
+Bundle 'kien/ctrlp.vim'
 " Bundle 'jistr/vim-nerdtree-tabs'
 
 "" original repos on GitHub

@@ -4,7 +4,7 @@ colorscheme elflord
 "se guifont=Menlo\ Regular:h28
 se guifont=Monaco:h28
 if has("gui_running")
-	se transparency=30
+  se transparency=30
 endif
 
 " Don't show scroll bar
@@ -40,10 +40,15 @@ let g:indent_guides_guide_size=1
 autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=red   ctermbg=3
 autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=green ctermbg=4
 
+" Never use tab
+set expandtab
+set shiftwidth=4
+set softtabstop=4
+
 " Show tab line
-"se list lcs=tab:\/.
-"se list lcs=tab:\/-
-"se list lcs=tab:+-,trail:-
+se list lcs=tab:\/.
+se list lcs=tab:\/-
+se list lcs=tab:+-,trail:-
 
 " Highlight line under cursor
 "se cul
