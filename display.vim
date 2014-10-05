@@ -4,7 +4,7 @@ colorscheme elflord
 "se guifont=Menlo\ Regular:h28
 se guifont=Monaco:h28
 if has("gui_running")
-  se transparency=30
+  se transparency=0
 endif
 
 " Don't show scroll bar
