@@ -1,6 +1,12 @@
 " Color, font, etc.
 se t_Co=256
-colorscheme elflord
+if has('gui_running')
+    colorscheme solarized
+    se background=dark
+else
+    colorscheme elflord
+endif
+"colorscheme elflord
 "se guifont=Menlo\ Regular:h28
 se guifont=Monaco:h28
 if has("gui_running")
