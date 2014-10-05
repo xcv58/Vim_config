@@ -11,6 +11,9 @@ se fileencodings=utf-8,gb18030,gb2312,gbk
 se backupdir=$HOME/.vim-tmp,$HOME/.tmp,$HOME/tmp,/var/tmp,/tmp
 se directory=$HOME/.vim-tmp,$HOME/.tmp,$HOME/tmp,/var/tmp,/tmp
 
+"set default to Dropbox
+cd ~/Dropbox
+
 "change default viewdir
 se viewdir=$HOME/.vim-view
 
@@ -32,6 +35,9 @@ se smartcase
 se ignorecase
 se wrapscan
 se magic
+
+" set working directory to current file's directory
+au BufEnter * silent! lcd %:p:h
 
 " Vundle
 so $HOME/.vim/vundle.vim
