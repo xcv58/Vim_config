@@ -52,9 +52,9 @@ set shiftwidth=4
 set softtabstop=4
 
 " Show tab line
-se list lcs=tab:\/.
-se list lcs=tab:\/-
-se list lcs=tab:+-,trail:-
+" se list lcs=tab:\/.
+" se list lcs=tab:\/-
+" se list lcs=tab:+-,trail:-
 
 " Highlight line under cursor
 "se cul
