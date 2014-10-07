@@ -8,7 +8,8 @@ else
 endif
 "colorscheme elflord
 "se guifont=Menlo\ Regular:h28
-se guifont=Monaco:h28
+"se guifont=Monaco:h28
+se guifont=Inconsolata:h28
 if has("gui_running")
   se transparency=0
 endif
