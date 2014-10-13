@@ -27,4 +27,8 @@ Then run this command:
 ```
 :BundleInstall
 ```
+
+Reminder: in this configuration, YouCompleteMe need compile. You can find the instruction from:
+https://github.com/Valloric/YouCompleteMe
+
 And enjoy!
