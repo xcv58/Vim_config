@@ -12,7 +12,10 @@ se backupdir=$HOME/.vim-tmp,$HOME/.tmp,$HOME/tmp,/var/tmp,/tmp
 se directory=$HOME/.vim-tmp,$HOME/.tmp,$HOME/tmp,/var/tmp,/tmp
 
 "set default to Dropbox
-cd ~/Dropbox
+let dropbox_home = $HOME . '/Dropbox'
+if isdirectory(dropbox_home)
+  cd ~/Dropbox
+endif
 
 "change default viewdir
 se viewdir=$HOME/.vim-view
