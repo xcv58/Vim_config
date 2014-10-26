@@ -38,6 +38,7 @@ Bundle 'vim-scripts/L9'
 Bundle 'bling/vim-airline'
 Bundle 'kien/ctrlp.vim'
 Bundle 'altercation/vim-colors-solarized'
+Bundle 'airblade/vim-gitgutter'
 " Bundle 'jistr/vim-nerdtree-tabs'
 
 "" original repos on GitHub
