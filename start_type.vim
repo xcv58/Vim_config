@@ -11,7 +11,7 @@
 " bufhidden=unload (save memory when other file is viewed)
 " buftype=nowritefile (is read-only)
 " undolevels=-1 (no undo possible)
-let g:LargeFile = 1024 * 1024 * 3
+let g:LargeFile = 1024 * 1024 * 32
 "let g:LargeFile = 1024 * 1024 * 10
 let g:skipview_files = [
       \ '[EXAMPLE PLUGIN BUFFER]'
