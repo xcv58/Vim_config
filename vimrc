@@ -31,6 +31,8 @@ se wildmode=list:longest,full
 se foldenable
 se foldnestmax=3
 se foldmethod=syntax
+" disable auto folding
+se foldlevelstart=99
 
 " Search related
 se hlsearch
