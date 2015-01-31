@@ -1,5 +1,5 @@
 " For ctrlp
-nmap <C-p> :CtrlPMixed<CR>
+" nmap <C-p> :CtrlPMixed<CR>
 
 " Leader
 let mapleader="\\"
