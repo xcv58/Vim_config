@@ -44,6 +44,9 @@ se magic
 " set working directory to current file's directory
 au BufEnter * silent! lcd %:p:h
 
+" autoread when file changes
+se autoread
+
 " Vundle
 so $HOME/.vim/vundle.vim
 
