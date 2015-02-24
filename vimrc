@@ -47,6 +47,9 @@ au BufEnter * silent! lcd %:p:h
 " autoread when file changes
 se autoread
 
+" set root for seperate config files
+let root = '~/.vim/bundle'
+
 " Vundle
 so $HOME/.vim/vundle.vim
 
@@ -63,8 +66,8 @@ so $HOME/.vim/status_line.vim
 " Detect start type by file size
 so $HOME/.vim/start_type.vim
 
-" For LaTeX
-so $HOME/.vim/latex.vim
+"" For LaTeX
+"so $HOME/.vim/latex.vim
 
 " For Keybind
 so $HOME/.vim/keybind.vim
