@@ -50,14 +50,8 @@ se autoread
 " set root for seperate config files
 let root = '~/.vim/bundle'
 
-if has("gui_running")
-  " Vundle
-  so $HOME/.vim/vundle.vim
-else
-  " NeoBundle
-  so $HOME/.vim/neobundle.vim
-endif
-
+" NeoBundle
+so $HOME/.vim/neobundle.vim
 
 " ctrlp
 so $HOME/.vim/ctrlp.vim
