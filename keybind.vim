@@ -12,6 +12,11 @@ map <C-h> :bp<cr>
 map <Leader>w :bd<cr>
 " map <C-w> :bd<cr>
 
+cnoremap <C-p> <Up>
+cnoremap <C-n> <Down>
+cnoremap <C-b> <Left>
+cnoremap <C-f> <Right>
+
 " Keybind for switch tabs
 if has("gui_macvim")
 	" Press Ctrl-R to redo
