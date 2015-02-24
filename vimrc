@@ -50,8 +50,14 @@ se autoread
 " set root for seperate config files
 let root = '~/.vim/bundle'
 
-" Vundle
-so $HOME/.vim/vundle.vim
+if has("gui_running")
+  " Vundle
+  so $HOME/.vim/vundle.vim
+else
+  " NeoBundle
+  so $HOME/.vim/neobundle.vim
+endif
+
 
 " ctrlp
 so $HOME/.vim/ctrlp.vim
@@ -66,8 +72,8 @@ so $HOME/.vim/status_line.vim
 " Detect start type by file size
 so $HOME/.vim/start_type.vim
 
-"" For LaTeX
-"so $HOME/.vim/latex.vim
+" For LaTeX
+so $HOME/.vim/latex.vim
 
 " For Keybind
 so $HOME/.vim/keybind.vim
