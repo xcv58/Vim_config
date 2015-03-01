@@ -41,6 +41,8 @@ se ignorecase
 se wrapscan
 se magic
 
+syntax on
+
 " set working directory to current file's directory
 au BufEnter * silent! lcd %:p:h
 
