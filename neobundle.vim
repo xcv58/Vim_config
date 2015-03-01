@@ -20,18 +20,18 @@
  " My Bundles here:
  " Refer to |:NeoBundle-examples|.
  " Note: You don't set neobundle setting in .gvimrc!
- NeoBundle 'nathanaelkane/vim-indent-guides'
- NeoBundle 'jcf/vim-latex'
- NeoBundle 'ervandew/supertab'
- NeoBundle 'scrooloose/nerdtree'
+ " NeoBundle 'nathanaelkane/vim-indent-guides'
+ " NeoBundle 'jcf/vim-latex'
+ " NeoBundle 'ervandew/supertab'
+ " NeoBundle 'scrooloose/nerdtree'
  NeoBundle 'The-NERD-Commenter'
- NeoBundle 'vim-scripts/taglist.vim'
- NeoBundle 'vim-scripts/L9'
+ " NeoBundle 'vim-scripts/taglist.vim'
+ " NeoBundle 'vim-scripts/L9'
  NeoBundle 'bling/vim-airline'
- NeoBundle 'kien/ctrlp.vim'
+ " NeoBundle 'kien/ctrlp.vim'
  NeoBundle 'altercation/vim-colors-solarized'
- NeoBundle 'airblade/vim-gitgutter'
- NeoBundle 'vim-scripts/YankRing'
+ " NeoBundle 'airblade/vim-gitgutter'
+ " NeoBundle 'vim-scripts/YankRing'
  NeoBundle 'Valloric/YouCompleteMe'
 
  call neobundle#end()

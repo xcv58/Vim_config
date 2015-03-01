@@ -40,10 +40,10 @@ highlight FoldColumn guibg=darkgrey guifg=white
 " Enable filetype detection
 filetype plugin indent on
 
-au FileType * IndentGuidesEnable
-let g:indent_guides_start_level=3
-let g:indent_guides_auto_colors=1
-let g:indent_guides_guide_size=1
+"au FileType * IndentGuidesEnable
+"let g:indent_guides_start_level=3
+"let g:indent_guides_auto_colors=1
+"let g:indent_guides_guide_size=1
 
 " Never use tab
 set expandtab
