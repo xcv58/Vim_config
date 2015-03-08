@@ -31,7 +31,7 @@
  " NeoBundle 'kien/ctrlp.vim'
  NeoBundle 'altercation/vim-colors-solarized'
  " NeoBundle 'airblade/vim-gitgutter'
- " NeoBundle 'vim-scripts/YankRing'
+ NeoBundle 'vim-scripts/YankRing'
  NeoBundle 'Valloric/YouCompleteMe'
 
  call neobundle#end()
