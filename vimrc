@@ -21,7 +21,7 @@ endif
 se viewdir=$HOME/.vim-view
 
 " set a long history
-se history=65536
+se history=10000
 
 "useful file/command completion
 se wildmenu
