@@ -13,9 +13,7 @@
 " undolevels=-1 (no undo possible)
 let g:LargeFile = 1024 * 1024 * 32
 "let g:LargeFile = 1024 * 1024 * 10
-let g:skipview_files = [
-      \ '[EXAMPLE PLUGIN BUFFER]'
-      \ ]
+let g:skipview_files = [ '[EXAMPLE PLUGIN BUFFER]' ]
 function! MakeViewCheck()
   if has('quickfix') && &buftype =~ 'nofile'
     " Buffer is marked as not a file

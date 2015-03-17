@@ -15,27 +15,6 @@ endif
 " Don't show scroll bar
 se guioptions-=r
 
-"show matching bracets
-se showmatch
-
-"Don't break a word
-se linebreak
-
-" Auto indent
-se autoindent
-
-" C indent
-se cindent
-
-" Smart indent
-se smartindent
-
-" No tabs, all tab characters are 2 space characters
-se tabstop=4
-se shiftwidth=4
-se softtabstop=4
-se expandtab
-
 " Color for fold
 highlight Folded guibg=grey guifg=blue
 highlight FoldColumn guibg=darkgrey guifg=white

@@ -2,14 +2,18 @@ so $HOME/.vim/base.vim
 
 " filetype plugin on
 
-so $HOME/.vim/plug.vim
+call plug#begin('~/.vim/plugged')
+Plug 'bling/vim-airline'
+Plug 'airblade/vim-gitgutter'
+Plug 'tpope/vim-fugitive'
+
+Plug 'YankRing.vim'
+Plug 'ervandew/supertab'
+call plug#end()
 
 " airline
 so $HOME/.vim/airline.vim
 
-" Display settings
-se t_Co=256
-se guifont=Inconsolata:h28
 colorscheme elflord
 
 " Detect start type by file size
