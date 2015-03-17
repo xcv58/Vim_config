@@ -1,17 +1,15 @@
-" Color, font, etc.
+" Color, font
 se t_Co=256
+se guifont=Inconsolata:h28
+"se guifont=Monaco:h28
+
+" colorscheme
 if has('gui_running')
-    colorscheme solarized
+    se transparency=10
     se background=dark
+    colorscheme solarized
 else
     colorscheme elflord
-endif
-"colorscheme elflord
-"se guifont=Menlo\ Regular:h28
-"se guifont=Monaco:h28
-se guifont=Inconsolata:h28
-if has("gui_running")
-  se transparency=0
 endif
 
 " Don't show scroll bar
@@ -25,13 +23,18 @@ se linebreak
 
 " Auto indent
 se autoindent
+
 " C indent
 se cindent
+
 " Smart indent
 se smartindent
 
-"tablength = 4
-se ts=2 sw=2
+" No tabs, all tab characters are 2 space characters
+se tabstop=4
+se shiftwidth=4
+se softtabstop=4
+se expandtab
 
 " Color for fold
 highlight Folded guibg=grey guifg=blue
@@ -39,16 +42,6 @@ highlight FoldColumn guibg=darkgrey guifg=white
 
 " Enable filetype detection
 filetype plugin indent on
-
-"au FileType * IndentGuidesEnable
-"let g:indent_guides_start_level=3
-"let g:indent_guides_auto_colors=1
-"let g:indent_guides_guide_size=1
-
-" Never use tab
-set expandtab
-set shiftwidth=4
-set softtabstop=4
 
 " Show tab line
 " se list lcs=tab:\/.
