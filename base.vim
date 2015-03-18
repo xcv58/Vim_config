@@ -62,3 +62,6 @@ se tabstop=4
 se shiftwidth=4
 se softtabstop=4
 se expandtab
+
+" Mac Clipboard
+se clipboard=unnamed
