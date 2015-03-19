@@ -20,7 +20,7 @@ se history=10000
 
 "useful file/command completion
 se wildmenu
-" se wildmode=list:longest,full
+se wildmode=longest,list
 
 let vim_data_home = $HOME . '/.vim-data'
 
