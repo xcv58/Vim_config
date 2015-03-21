@@ -8,6 +8,18 @@ map <Leader>a :bp<cr>
 map <C-h> :bp<cr>
 map <Leader>w :bd<cr>
 
+" Toggle transparency
+map <Leader>t :call TransparencyToggle()<cr>
+
+function! TransparencyToggle()
+    if &transparency == 0
+        se transparency=10
+    else
+        se transparency=0
+    endif
+endfunction
+
+
 " For HHKB use C-p to search in command line
 cnoremap <C-p> <Up>
 cnoremap <C-n> <Down>
