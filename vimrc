@@ -12,9 +12,11 @@ au BufEnter * silent! lcd %:p:h
 " autoread when file changes
 se autoread
 
-" filetype plugin on
-
+" load plug
 so $HOME/.vim/plug.vim
+
+" set filetype plugin on after plug, because plug will set filetype off
+filetype plugin on
 
 " Keybind
 so $HOME/.vim/keybind.vim
