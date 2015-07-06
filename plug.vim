@@ -9,4 +9,6 @@ Plug 'ervandew/supertab'
 Plug 'scrooloose/nerdcommenter'
 Plug 'Valloric/YouCompleteMe'
 Plug 'altercation/vim-colors-solarized'
+
+Plug 'djoshea/vim-autoread'
 call plug#end()
