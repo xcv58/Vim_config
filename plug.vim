@@ -7,7 +7,7 @@ Plug 'YankRing.vim'
 Plug 'ervandew/supertab'
 
 Plug 'scrooloose/nerdcommenter'
-Plug 'Valloric/YouCompleteMe'
+" Plug 'Valloric/YouCompleteMe'
 Plug 'altercation/vim-colors-solarized'
 
 Plug 'djoshea/vim-autoread'
