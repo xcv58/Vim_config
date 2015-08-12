@@ -9,6 +9,7 @@ Plug 'ervandew/supertab'
 Plug 'scrooloose/nerdcommenter'
 " Plug 'Valloric/YouCompleteMe'
 Plug 'altercation/vim-colors-solarized'
+Plug 'sheerun/vim-polyglot'
 
 Plug 'djoshea/vim-autoread'
 call plug#end()
