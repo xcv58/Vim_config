@@ -30,7 +30,7 @@ let g:yankring_history_dir = vim_data_home
 "enable fold
 se foldenable
 se foldnestmax=3
-" se foldmethod=syntax
+se foldmethod=syntax
 
 " disable auto folding
 se foldlevelstart=99
