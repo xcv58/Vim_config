@@ -25,7 +25,7 @@ ln -s Vim_config ~/.vim
 
 Then run this command:
 ```
-:BundleInstall
+:PlugInstall
 ```
 
 Reminder: in this configuration, YouCompleteMe need compile. You can find the instruction from:
