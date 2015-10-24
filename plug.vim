@@ -12,4 +12,5 @@ Plug 'altercation/vim-colors-solarized'
 Plug 'sheerun/vim-polyglot'
 
 Plug 'djoshea/vim-autoread'
+Plug 'kien/ctrlp.vim'
 call plug#end()
