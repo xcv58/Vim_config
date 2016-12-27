@@ -65,3 +65,6 @@ se expandtab
 
 " Mac Clipboard
 se clipboard=unnamed
+
+" No auto-indenting
+se paste
