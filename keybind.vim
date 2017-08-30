@@ -10,6 +10,7 @@ map <Leader>w :bd<cr>
 
 " Toggle transparency
 map <Leader>t :call TransparencyToggle()<cr>
+map <D-u> :call TransparencyToggle()<cr>
 
 function! TransparencyToggle()
     if &transparency == 0
