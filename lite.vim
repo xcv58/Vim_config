@@ -5,7 +5,6 @@ Plug 'bling/vim-airline'
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
 
-Plug 'YankRing.vim'
 Plug 'ervandew/supertab'
 call plug#end()
 
