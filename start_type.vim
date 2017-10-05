@@ -35,11 +35,12 @@ function! MakeViewCheck()
     " File is in skip list
     return 0
   endif
+  " Disable file size check because we handle it in vimrc
   " autocmd BufReadPre * let f=expand("<afile>") |
-  if getfsize(expand("<afile>")) > g:LargeFile
-    " File is too large
-    return 0
-  endif
+  " if getfsize(expand("<afile>")) > g:LargeFile
+  "   " File is too large
+  "   return 0
+  " endif
   return 1
 endfunction
 
@@ -58,22 +59,6 @@ function! MiniStartup()
   se nonu
   "se noincsearch
   call SyntaxOff()
-endfunction
-
-function! SyntaxOn()
-  if has("gui_running")
-    se syntax=on
-  else
-    syntax on
-  endif
-endfunction
-
-function! SyntaxOff()
-  if has("gui_running")
-    se syntax=off
-  else
-    syntax off
-  endif
 endfunction
 
 augroup vimrcAutoView
