@@ -1,31 +1,18 @@
 so $HOME/.vim/base.vim
 
-"set default to Dropbox
-let dropbox_home = $HOME . '/Dropbox'
-if isdirectory(dropbox_home)
-  cd ~/Dropbox
-endif
+function! s:Init()
+  so $HOME/.vim/main.vim
+endfunction
 
-" set working directory to current file's directory
-au BufEnter * silent! lcd %:p:h
+command! -nargs=0 -bar Init call s:Init()
 
-" autoread when file changes
-se autoread
+function! s:Load()
+  if getfsize(expand(@%)) > 1024 * 1024 " 1MB
+    se laststatus=2
+    se statusline=%f\ too\ big\ -\ Use\ :Init\ to\ load\ config
+  else
+    call s:Init()
+  endif
+endfunction
 
-" load plug
-so $HOME/.vim/plug.vim
-
-" set filetype plugin on after plug, because plug will set filetype off
-filetype plugin on
-
-" Keybind
-so $HOME/.vim/keybind.vim
-
-" airline
-so $HOME/.vim/airline.vim
-
-" Display settings
-so $HOME/.vim/display.vim
-
-" Detect start type by file size
-so $HOME/.vim/start_type.vim
+call s:Load()
