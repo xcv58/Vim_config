@@ -43,7 +43,7 @@ function! MakeViewCheck()
   return 1
 endfunction
 
-function DefaultStartup()
+function! DefaultStartup()
   silent loadview
   if &ft != ''
     call SyntaxOn()
@@ -54,13 +54,13 @@ function DefaultStartup()
   se nu
 endfunction
 
-function MiniStartup()
+function! MiniStartup()
   se nonu
   "se noincsearch
   call SyntaxOff()
 endfunction
 
-function SyntaxOn()
+function! SyntaxOn()
   if has("gui_running")
     se syntax=on
   else
@@ -68,7 +68,7 @@ function SyntaxOn()
   endif
 endfunction
 
-function SyntaxOff()
+function! SyntaxOff()
   if has("gui_running")
     se syntax=off
   else
