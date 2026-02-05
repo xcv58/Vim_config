@@ -1,19 +1,24 @@
 " Color, font
-se t_Co=256
-se guifont=Inconsolata:h28
-"se guifont=Monaco:h28
+set t_Co=256
 
-" colorscheme
+" Enable 24-bit color in modern terminals
+if has('termguicolors')
+  set termguicolors
+endif
+
+set guifont=Inconsolata:h18
+
+" Colorscheme
 if has('gui_running')
-    se transparency=10
-    se background=dark
-    colorscheme solarized
+  set transparency=10
+  set background=dark
+  colorscheme solarized
 else
-    colorscheme elflord
+  colorscheme elflord
 endif
 
 " Don't show scroll bar
-se guioptions-=r
+set guioptions-=r
 
 " Color for fold
 highlight Folded guibg=grey guifg=blue
@@ -22,15 +27,8 @@ highlight FoldColumn guibg=darkgrey guifg=white
 " Enable filetype detection
 filetype plugin indent on
 
-" Show tab line
-" se list lcs=tab:\/.
-" se list lcs=tab:\/-
-" se list lcs=tab:+-,trail:-
-" set listchars=tab:▸\ ,eol:¬
-se list lcs=tab:\ \ ,
+" Show tab characters
+set list lcs=tab:\ \ ,
 
-" Highlight line under cursor
-"se cul
-
-" Highlight column under cursor
-"se cuc
+" Line numbers
+set number

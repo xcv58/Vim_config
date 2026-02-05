@@ -1,76 +1,67 @@
 " Encode
-se encoding=UTF-8
-" se langmenu=zh_CN.UTF-8
-" language message zh_CN.UTF-8
+set encoding=UTF-8
 
-se ambiwidth=double
-se fileencodings=utf-8,gb18030,gb2312,gbk
-"se fileencoding=utf-8,gb18030,gbk,utf-16,ucs-bom,big5,latin1
-""se fileencodings=utf-8,ucs-bom,cp936,gb18030,utf-16,big5,gbk,ucs-bom,cp936,latin1
+set ambiwidth=double
+set fileencodings=utf-8,gb18030,gb2312,gbk
 
-"backup tmp directory
-se backupdir=$HOME/.vim-tmp,$HOME/.tmp,$HOME/tmp,/var/tmp,/tmp
-se directory=$HOME/.vim-tmp,$HOME/.tmp,$HOME/tmp,/var/tmp,/tmp
+" Backup tmp directory
+set backupdir=$HOME/.vim-tmp,$HOME/.tmp,$HOME/tmp,/var/tmp,/tmp
+set directory=$HOME/.vim-tmp,$HOME/.tmp,$HOME/tmp,/var/tmp,/tmp
 
-"change default viewdir
-se viewdir=$HOME/.vim-view
+" Change default viewdir
+set viewdir=$HOME/.vim-view
 
-" set a long history
-se history=10000
+" Set a long history
+set history=10000
 
-"useful file/command completion
-se wildmenu
-se wildmode=longest,list
+" Useful file/command completion
+set wildmenu
+set wildmode=longest,list
 
-let vim_data_home = $HOME . '/.vim-data'
+" Enable fold
+set foldenable
+set foldnestmax=3
+set foldmethod=syntax
 
-" set yankring history file
-let g:yankring_history_dir = vim_data_home
-
-"enable fold
-se foldenable
-se foldnestmax=3
-se foldmethod=syntax
-
-" disable auto folding
-se foldlevelstart=99
+" Disable auto folding
+set foldlevelstart=99
 
 " Search related
-se hlsearch
-se smartcase
-se ignorecase
-se wrapscan
-se magic
+set hlsearch
+set smartcase
+set ignorecase
+set wrapscan
+set magic
 
-"show matching bracets
-se showmatch
+" Show matching brackets
+set showmatch
 
-"Don't break a word
-se linebreak
+" Don't break a word
+set linebreak
 
-" Auto indent
-se autoindent
+" Smart indent (includes autoindent behavior)
+set smartindent
 
-" C indent
-se cindent
-
-" Smart indent
-se smartindent
-
-" No tabs, all tab characters are 2 space characters
-se tabstop=4
-se shiftwidth=4
-se softtabstop=4
-se expandtab
+" No tabs, all tab characters are 4 space characters
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
+set expandtab
 
 " Mac Clipboard
-se clipboard=unnamed
+set clipboard=unnamed
 
 " Undo persistence
 set undofile
 set undodir=$HOME/.vim-undo
 
-" Create undo directory if needed
+" Create directories if needed
 if !isdirectory($HOME . '/.vim-undo')
   silent! call mkdir($HOME . '/.vim-undo', 'p', 0700)
+endif
+if !isdirectory($HOME . '/.vim-tmp')
+  silent! call mkdir($HOME . '/.vim-tmp', 'p', 0700)
+endif
+if !isdirectory($HOME . '/.vim-view')
+  silent! call mkdir($HOME . '/.vim-view', 'p', 0700)
 endif

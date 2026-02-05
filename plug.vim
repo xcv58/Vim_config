@@ -22,17 +22,21 @@ Plug 'preservim/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 
-" Colors and syntax
+" Colors and syntax (lazy-loaded for performance)
 Plug 'altercation/vim-colors-solarized'
-Plug 'sheerun/vim-polyglot'
+Plug 'sheerun/vim-polyglot', { 'on': [] }
 
-" Utilities
-Plug 'djoshea/vim-autoread'
-
-" Linting
-Plug 'dense-analysis/ale'
+" Linting (lazy-loaded - enable on first insert)
+Plug 'dense-analysis/ale', { 'on': [] }
 
 " Which-key for keybinding help (lazy-loaded)
 Plug 'liuchengxu/vim-which-key', { 'on': ['WhichKey', 'WhichKey!'] }
 
 call plug#end()
+
+" Lazy load polyglot and ale on first file read
+augroup LazyLoadPlugins
+  autocmd!
+  autocmd BufReadPost * call plug#load('vim-polyglot')
+  autocmd InsertEnter * call plug#load('ale')
+augroup END

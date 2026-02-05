@@ -8,19 +8,16 @@ inoremap jk <Esc>
 nnoremap <Leader>s :w<CR>
 
 " Buffers
-map <Leader>d :bn<cr>
-map <C-l> :bn<cr>
-map <Leader>a :bp<cr>
-map <C-h> :bp<cr>
-map <Leader>w :bd<cr>
+nnoremap <Leader>d :bn<cr>
+nnoremap <Leader>a :bp<cr>
+nnoremap <Leader>w :bd<cr>
+" Alternative buffer navigation with Ctrl
+nnoremap <C-l> :bn<cr>
+nnoremap <C-h> :bp<cr>
 
-" Window navigation
+" Window navigation with Ctrl
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
-nnoremap <Leader>h <C-w>h
-nnoremap <Leader>l <C-w>l
-nnoremap <Leader>j <C-w>j
-nnoremap <Leader>k <C-w>k
 
 " NERDTree toggle
 nnoremap <Leader>n :NERDTreeToggle<CR>
@@ -28,18 +25,35 @@ nnoremap <Leader>n :NERDTreeToggle<CR>
 " Which-key
 nnoremap <silent> <Leader> :WhichKey '\'<CR>
 
-" Toggle transparency
-map <Leader>t :call TransparencyToggle()<cr>
-map <D-u> :call TransparencyToggle()<cr>
+" Toggle transparency (MacVim only)
+if has('gui_macvim')
+  nnoremap <Leader>t :call TransparencyToggle()<cr>
+  nnoremap <D-u> :call TransparencyToggle()<cr>
 
-function! TransparencyToggle()
+  function! TransparencyToggle()
     if &transparency == 0
-        se transparency=10
+      set transparency=10
     else
-        se transparency=0
+      set transparency=0
     endif
-endfunction
+  endfunction
 
+  " Tab switching with Ctrl-Tab
+  noremap <C-Tab> :tabnext<CR>
+  noremap <C-S-Tab> :tabprev<CR>
+
+  " Switch to specific tab numbers with Command-number
+  noremap <D-1> :tabn 1<CR>
+  noremap <D-2> :tabn 2<CR>
+  noremap <D-3> :tabn 3<CR>
+  noremap <D-4> :tabn 4<CR>
+  noremap <D-5> :tabn 5<CR>
+  noremap <D-6> :tabn 6<CR>
+  noremap <D-7> :tabn 7<CR>
+  noremap <D-8> :tabn 8<CR>
+  noremap <D-9> :tabn 9<CR>
+  noremap <D-0> :tablast<CR>
+endif
 
 " For HHKB use C-p to search in command line
 cnoremap <C-p> <Up>
@@ -47,26 +61,5 @@ cnoremap <C-n> <Down>
 cnoremap <C-b> <Left>
 cnoremap <C-f> <Right>
 
-" Keybind for switch tabs
-if has("gui_macvim")
-    " Press Ctrl-R to redo
-    noremap <C-R> :redo<CR>
-
-    " Press Ctrl-Tab to switch between open tabs (like browser tabs) to
-    " the right side. Ctrl-Shift-Tab goes the other way.
-    noremap <C-Tab> :tabnext<CR>
-    noremap <C-S-Tab> :tabprev<CR>
-
-    " Switch to specific tab numbers with Command-number
-    noremap <D-1> :tabn 1<CR>
-    noremap <D-2> :tabn 2<CR>
-    noremap <D-3> :tabn 3<CR>
-    noremap <D-4> :tabn 4<CR>
-    noremap <D-5> :tabn 5<CR>
-    noremap <D-6> :tabn 6<CR>
-    noremap <D-7> :tabn 7<CR>
-    noremap <D-8> :tabn 8<CR>
-    noremap <D-9> :tabn 9<CR>
-    " Command-0 goes to the last tab
-    noremap <D-0> :tablast<CR>
-endif
+" Press Ctrl-R to redo
+noremap <C-R> :redo<CR>
