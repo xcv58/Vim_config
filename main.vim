@@ -27,3 +27,9 @@ so $HOME/.vim/display.vim
 
 " Detect start type by file size
 so $HOME/.vim/start_type.vim
+
+" fzf configuration (replaces ctrlp)
+so $HOME/.vim/fzf.vim
+
+" which-key configuration
+so $HOME/.vim/whichkey.vim

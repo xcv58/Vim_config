@@ -1,12 +1,32 @@
 " Leader
 let mapleader="\\"
 
+" Quick escape with jk
+inoremap jk <Esc>
+
+" Quick save
+nnoremap <Leader>s :w<CR>
+
 " Buffers
 map <Leader>d :bn<cr>
 map <C-l> :bn<cr>
 map <Leader>a :bp<cr>
 map <C-h> :bp<cr>
 map <Leader>w :bd<cr>
+
+" Window navigation
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <Leader>h <C-w>h
+nnoremap <Leader>l <C-w>l
+nnoremap <Leader>j <C-w>j
+nnoremap <Leader>k <C-w>k
+
+" NERDTree toggle
+nnoremap <Leader>n :NERDTreeToggle<CR>
+
+" Which-key
+nnoremap <silent> <Leader> :WhichKey '\'<CR>
 
 " Toggle transparency
 map <Leader>t :call TransparencyToggle()<cr>

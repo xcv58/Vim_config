@@ -66,5 +66,11 @@ se expandtab
 " Mac Clipboard
 se clipboard=unnamed
 
-" No auto-indenting
-se paste
+" Undo persistence
+set undofile
+set undodir=$HOME/.vim-undo
+
+" Create undo directory if needed
+if !isdirectory($HOME . '/.vim-undo')
+  silent! call mkdir($HOME . '/.vim-undo', 'p', 0700)
+endif

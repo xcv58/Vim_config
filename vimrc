@@ -24,7 +24,7 @@ endfunction
 command! -nargs=0 -bar Init call s:Init()
 
 function! s:Load()
-  if getfsize(expand(@%)) > 32 * 1024 " 1024 = 1KB
+  if getfsize(expand(@%)) > 1024 * 1024 " 1MB
     se laststatus=2
     se statusline=%f\ too\ big\ -\ Use\ :Init\ to\ load\ config
   else
