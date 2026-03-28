@@ -22,6 +22,9 @@ Plug 'preservim/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 
+" Markdown browser preview
+Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': 'markdown' }
+
 " Colors and syntax (lazy-loaded for performance)
 Plug 'altercation/vim-colors-solarized'
 Plug 'sheerun/vim-polyglot', { 'on': [] }

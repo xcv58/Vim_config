@@ -6,11 +6,11 @@ if has('termguicolors')
   set termguicolors
 endif
 
-set guifont=Inconsolata:h18
+set guifont=Menlo:h28
 
 " Colorscheme
 if has('gui_running')
-  set transparency=10
+  set transparency=0
   set background=dark
   colorscheme solarized
 else

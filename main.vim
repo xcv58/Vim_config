@@ -33,3 +33,6 @@ so $HOME/.vim/fzf.vim
 
 " which-key configuration
 so $HOME/.vim/whichkey.vim
+
+" glow markdown preview
+so $HOME/.vim/glow.vim

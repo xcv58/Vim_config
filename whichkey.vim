@@ -15,6 +15,10 @@ let g:which_key_map.w = 'delete buffer'
 let g:which_key_map.s = 'save file'
 let g:which_key_map.n = 'toggle NERDTree'
 
+" Preview
+let g:which_key_map.p = 'preview markdown in browser'
+let g:which_key_map.P = 'preview markdown in terminal (glow)'
+
 " fzf operations
 let g:which_key_map.f = 'find files (fzf)'
 let g:which_key_map.b = 'find buffers (fzf)'

@@ -22,6 +22,9 @@ nnoremap <C-k> <C-w>k
 " NERDTree toggle
 nnoremap <Leader>n :NERDTreeToggle<CR>
 
+" Markdown preview in browser
+autocmd FileType markdown nnoremap <buffer> <Leader>p :MarkdownPreviewToggle<CR>
+
 " Which-key
 nnoremap <silent> <Leader> :WhichKey '\'<CR>
 
