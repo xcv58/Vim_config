@@ -1,3 +1,6 @@
+" markdown-preview.nvim custom CSS
+let g:mkdp_markdown_css = expand('~/.vim/markdown-preview.css')
+
 " Glow markdown preview (https://github.com/charmbracelet/glow)
 let s:glow_bin = ''
 for s:candidate in ['glow', '/opt/homebrew/bin/glow', '/usr/local/bin/glow']
