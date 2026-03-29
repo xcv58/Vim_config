@@ -25,9 +25,8 @@ Plug 'junegunn/fzf.vim'
 " Markdown browser preview
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': 'markdown' }
 
-" Colors and syntax (lazy-loaded for performance)
+" Colors
 Plug 'altercation/vim-colors-solarized'
-Plug 'sheerun/vim-polyglot', { 'on': [] }
 
 " Linting (lazy-loaded - enable on first insert)
 Plug 'dense-analysis/ale', { 'on': [] }
@@ -37,9 +36,8 @@ Plug 'liuchengxu/vim-which-key', { 'on': ['WhichKey', 'WhichKey!'] }
 
 call plug#end()
 
-" Lazy load polyglot and ale on first file read
+" Lazy load ale on first insert
 augroup LazyLoadPlugins
   autocmd!
-  autocmd BufReadPost * call plug#load('vim-polyglot')
   autocmd InsertEnter * call plug#load('ale')
 augroup END

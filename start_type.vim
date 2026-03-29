@@ -35,7 +35,9 @@ function! DefaultStartup() abort
     return
   endif
   silent! loadview
-  call SyntaxOn()
+  if !exists('g:syntax_on') || &syntax ==# ''
+    call SyntaxOn()
+  endif
   setlocal incsearch
   setlocal number
 endfunction

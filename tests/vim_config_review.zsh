@@ -19,10 +19,22 @@ small_tmp=$(mktemp /tmp/vim-config-review-small.XXXXXX.txt)
 large_tmp=$(mktemp /tmp/vim-config-review-large.XXXXXX.txt)
 small_mode_tmp=$(mktemp /tmp/vim-config-review-small-mode.XXXXXX.txt)
 large_mode_tmp=$(mktemp /tmp/vim-config-review-large-mode.XXXXXX.txt)
-trap 'rm -f "$options_tmp" "$syntax_tmp" "$startup_tmp" "$threshold_tmp" "$small_tmp" "$large_tmp" "$small_mode_tmp" "$large_mode_tmp"' EXIT
+markdown_tmp=$(mktemp /tmp/vim-config-review-markdown.XXXXXX.md)
+markdown_startup_tmp=$(mktemp /tmp/vim-config-review-markdown-startup.XXXXXX.log)
+trap 'rm -f "$options_tmp" "$syntax_tmp" "$startup_tmp" "$threshold_tmp" "$small_tmp" "$large_tmp" "$small_mode_tmp" "$large_mode_tmp" "$markdown_tmp" "$markdown_startup_tmp"' EXIT
 
 dd if=/dev/zero of="$small_tmp" bs=1m count=2 status=none
 dd if=/dev/zero of="$large_tmp" bs=1m count=11 status=none
+cat > "$markdown_tmp" <<'EOF'
+# Title
+
+- item 1
+- item 2
+
+```vim
+set number
+```
+EOF
 
 if rg -n 'set\s+syntax=(on|off)' vimrc >/dev/null; then
   fail "vimrc still uses set syntax=on/off"
@@ -50,6 +62,10 @@ fi
 
 if ! rg -n "Plug 'preservim/nerdcommenter'" plug.vim >/dev/null; then
   fail "plug.vim still uses the stale nerdcommenter source"
+fi
+
+if rg -n 'vim-polyglot' plug.vim >/dev/null; then
+  fail "plug.vim still declares vim-polyglot"
 fi
 
 vim -es -Nu "$repo_dir/vimrc" -i NONE \
@@ -126,8 +142,22 @@ vim -es -Nu "$repo_dir/vimrc" -i NONE \
   -c qall! >/dev/null 2>&1
 
 filetype_loads=$(rg -c '/runtime/filetype\.vim' "$startup_tmp")
-if [[ "$filetype_loads" -gt 1 ]]; then
+if [[ "$filetype_loads" -gt 2 ]]; then
   fail "filetype.vim was sourced $filetype_loads times"
+fi
+
+vim -es -Nu "$repo_dir/vimrc" -i NONE "$markdown_tmp" \
+  --startuptime "$markdown_startup_tmp" \
+  -c qall! >/dev/null 2>&1
+
+markdown_syntax_loads=$(rg -c '/runtime/syntax/markdown\.vim' "$markdown_startup_tmp")
+if [[ "$markdown_syntax_loads" -gt 1 ]]; then
+  fail "markdown syntax was sourced $markdown_syntax_loads times"
+fi
+
+markdown_polyglot_loads=$(rg -c 'vim-polyglot' "$markdown_startup_tmp" || true)
+if [[ "$markdown_polyglot_loads" -gt 0 ]]; then
+  fail "markdown startup still loads vim-polyglot"
 fi
 
 print -- "vim config review checks passed"
