@@ -11,7 +11,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'ervandew/supertab'
 
 " Editing enhancements
-Plug 'scrooloose/nerdcommenter'
+Plug 'preservim/nerdcommenter'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 

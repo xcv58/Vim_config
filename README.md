@@ -1,8 +1,6 @@
 Vim config
 ========
-Only work on Vim 7.4 or later!
-
-I just test on OS X Version 10.9 and Ubuntu 13.10 x64.
+Tested with Vim 9.1 / MacVim 9.1.
 
 If you have your own .vimrc, .vim, etc.
 ========
@@ -28,7 +26,6 @@ Then run this command:
 :PlugInstall
 ```
 
-Reminder: in this configuration, YouCompleteMe need compile. You can find the instruction from:
-https://github.com/Valloric/YouCompleteMe
+This repo bundles `autoload/plug.vim`, so `:PlugInstall` is the main setup step after linking `~/.vim`.
 
-And enjoy!
+Large files use a simplified mode above 10MB. In that mode persistent undo is disabled by default and the statusline shows the current undo-file state.

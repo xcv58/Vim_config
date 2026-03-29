@@ -1,15 +1,17 @@
 " Automatic view saving/loading and large file handling
 
-" Large file threshold (matches vimrc)
-let g:LargeFile = 1024 * 1024  " 1MB
-
 let g:skipview_files = ['[EXAMPLE PLUGIN BUFFER]']
 
-function! MakeViewCheck()
-  if has('quickfix') && &buftype =~ 'nofile'
+function! s:IsLargeFile() abort
+  let l:path = expand('%:p')
+  if empty(l:path) || !filereadable(l:path)
     return 0
   endif
-  if empty(glob(expand('%:p')))
+  return getfsize(l:path) > g:large_file_threshold
+endfunction
+
+function! MakeViewCheck() abort
+  if &buftype !=# ''
     return 0
   endif
   if len($TEMP) && expand('%:p:h') == $TEMP
@@ -21,25 +23,30 @@ function! MakeViewCheck()
   if index(g:skipview_files, expand('%')) >= 0
     return 0
   endif
+  if s:IsLargeFile()
+    return 0
+  endif
   return 1
 endfunction
 
-function! DefaultStartup()
-  silent! loadview
-  if &ft != ''
-    call SyntaxOn()
+function! DefaultStartup() abort
+  if s:IsLargeFile()
+    call MiniStartup()
+    return
   endif
-  set incsearch
-  set number
+  silent! loadview
+  call SyntaxOn()
+  setlocal incsearch
+  setlocal number
 endfunction
 
-function! MiniStartup()
-  set nonumber
+function! MiniStartup() abort
+  setlocal nonumber
   call SyntaxOff()
 endfunction
 
 augroup vimrcAutoView
   autocmd!
-  autocmd BufWritePost,BufLeave,WinLeave,BufWinLeave ?* if MakeViewCheck() | mkview | endif
+  autocmd BufWinLeave ?* if MakeViewCheck() | silent! mkview | endif
   autocmd BufWinEnter ?* if MakeViewCheck() | call DefaultStartup() | else | call MiniStartup() | endif
 augroup END

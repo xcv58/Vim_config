@@ -31,7 +31,10 @@ if has('gui_macvim')
 endif
 
 " Register the dictionary
-autocmd! User vim-which-key call which_key#register('\', 'g:which_key_map')
+augroup VimrcWhichKey
+  autocmd!
+  autocmd User vim-which-key call which_key#register('\', 'g:which_key_map')
+augroup END
 
 " Additional keybindings not shown in which-key (for reference):
 " jk (insert) = Escape to normal mode

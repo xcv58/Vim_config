@@ -5,16 +5,16 @@
 " endif
 
 " set working directory to current file's directory
-au BufEnter * silent! lcd %:p:h
+augroup VimrcLocalCwd
+  autocmd!
+  autocmd BufReadPost,BufNewFile * if &buftype ==# '' && expand('%:p:h') !=# '' | silent! lcd %:p:h | endif
+augroup END
 
 " autoread when file changes
 se autoread
 
 " load plug
 so $HOME/.vim/plug.vim
-
-" set filetype plugin on after plug, because plug will set filetype off
-filetype plugin on
 
 " Keybind
 so $HOME/.vim/keybind.vim

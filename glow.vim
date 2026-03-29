@@ -23,5 +23,8 @@ if !empty(s:glow_bin)
 
   let g:glow_bin = s:glow_bin
 
-  autocmd FileType markdown nnoremap <buffer> <Leader>P :Glow<CR>
+  augroup VimrcGlowPreview
+    autocmd!
+    autocmd FileType markdown nnoremap <buffer> <Leader>P :Glow<CR>
+  augroup END
 endif

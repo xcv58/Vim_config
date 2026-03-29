@@ -23,7 +23,10 @@ nnoremap <C-k> <C-w>k
 nnoremap <Leader>n :NERDTreeToggle<CR>
 
 " Markdown preview in browser
-autocmd FileType markdown nnoremap <buffer> <Leader>p :MarkdownPreviewToggle<CR>
+augroup VimrcMarkdownPreview
+  autocmd!
+  autocmd FileType markdown nnoremap <buffer> <Leader>p :MarkdownPreviewToggle<CR>
+augroup END
 
 " Which-key
 nnoremap <silent> <Leader> :WhichKey '\'<CR>

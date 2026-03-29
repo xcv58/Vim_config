@@ -1,34 +1,34 @@
 so $HOME/.vim/base.vim
 
-function! SyntaxOn()
-  if has("gui_running")
-    se syntax=on
-  else
-    syntax on
+function! SyntaxOn() abort
+  syntax enable
+endfunction
+
+function! SyntaxOff() abort
+  syntax off
+endfunction
+
+function! s:IsLargeFile(...) abort
+  let l:path = a:0 ? a:1 : expand('%:p')
+  if empty(l:path) || !filereadable(l:path)
+    return 0
   endif
+  return getfsize(l:path) > g:large_file_threshold
 endfunction
 
-function! SyntaxOff()
-  if has("gui_running")
-    se syntax=off
+function! LargeFileModeStatusline() abort
+  return 'large file mode - undofile ' . (&l:undofile ? 'enabled' : 'disabled')
+endfunction
+
+function! s:Load() abort
+  if s:IsLargeFile()
+    set noundofile
+    set nonumber
+    call SyntaxOff()
+    set laststatus=2
+    set statusline=%f\ -\ %{LargeFileModeStatusline()}
   else
-    syntax off
-  endif
-endfunction
-
-function! s:Init()
-  call SyntaxOn()
-  so $HOME/.vim/main.vim
-endfunction
-
-command! -nargs=0 -bar Init call s:Init()
-
-function! s:Load()
-  if getfsize(expand(@%)) > 1024 * 1024 " 1MB
-    se laststatus=2
-    se statusline=%f\ too\ big\ -\ Use\ :Init\ to\ load\ config
-  else
-    call s:Init()
+    so $HOME/.vim/main.vim
   endif
 endfunction
 

@@ -1,6 +1,8 @@
 " Encode
 set encoding=UTF-8
 
+let g:large_file_threshold = 10 * 1024 * 1024 " 10MB
+
 set ambiwidth=double
 set fileencodings=utf-8,gb18030,gb2312,gbk
 
@@ -21,7 +23,7 @@ set wildmode=longest,list
 " Enable fold
 set foldenable
 set foldnestmax=3
-set foldmethod=syntax
+set foldmethod=manual
 
 " Disable auto folding
 set foldlevelstart=99
@@ -49,7 +51,9 @@ set softtabstop=4
 set expandtab
 
 " Mac Clipboard
-set clipboard=unnamed
+if has('clipboard')
+  set clipboard=unnamedplus
+endif
 
 " Undo persistence
 set undofile
