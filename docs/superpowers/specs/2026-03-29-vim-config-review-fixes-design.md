@@ -17,5 +17,5 @@
 **Approach:**
 1. Keep vim-plug as the startup owner for `filetype plugin indent on` and `syntax enable`.
 2. Make the syntax helper wrappers explicit and correct.
-3. Shift the config toward modern Vim defaults: `termguicolors`, `clipboard=unnamedplus`, and `foldmethod=manual`.
+3. Shift the config toward modern Vim defaults where they do not break established behavior: `termguicolors`, `clipboard=unnamed`, and `foldmethod=manual`.
 4. Add a small regression script so these review fixes stay enforced.

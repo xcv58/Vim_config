@@ -16,13 +16,14 @@ syntax_tmp=$(mktemp /tmp/vim-config-review-syntax.XXXXXX.txt)
 startup_tmp=$(mktemp /tmp/vim-config-review-startup.XXXXXX.log)
 threshold_tmp=$(mktemp /tmp/vim-config-review-threshold.XXXXXX.txt)
 mapping_tmp=$(mktemp /tmp/vim-config-review-mapping.XXXXXX.txt)
+yank_tmp=$(mktemp /tmp/vim-config-review-yank.XXXXXX.txt)
 small_tmp=$(mktemp /tmp/vim-config-review-small.XXXXXX.txt)
 large_tmp=$(mktemp /tmp/vim-config-review-large.XXXXXX.txt)
 small_mode_tmp=$(mktemp /tmp/vim-config-review-small-mode.XXXXXX.txt)
 large_mode_tmp=$(mktemp /tmp/vim-config-review-large-mode.XXXXXX.txt)
 markdown_tmp=$(mktemp /tmp/vim-config-review-markdown.XXXXXX.md)
 markdown_startup_tmp=$(mktemp /tmp/vim-config-review-markdown-startup.XXXXXX.log)
-trap 'rm -f "$options_tmp" "$syntax_tmp" "$startup_tmp" "$threshold_tmp" "$mapping_tmp" "$small_tmp" "$large_tmp" "$small_mode_tmp" "$large_mode_tmp" "$markdown_tmp" "$markdown_startup_tmp"' EXIT
+trap 'rm -f "$options_tmp" "$syntax_tmp" "$startup_tmp" "$threshold_tmp" "$mapping_tmp" "$yank_tmp" "$small_tmp" "$large_tmp" "$small_mode_tmp" "$large_mode_tmp" "$markdown_tmp" "$markdown_startup_tmp"' EXIT
 
 dd if=/dev/zero of="$small_tmp" bs=1m count=2 status=none
 dd if=/dev/zero of="$large_tmp" bs=1m count=11 status=none
@@ -86,8 +87,8 @@ if ! rg -q 'foldmethod=manual' "$options_tmp"; then
   fail "foldmethod is not manual"
 fi
 
-if ! rg -q 'clipboard=unnamedplus' "$options_tmp"; then
-  fail "clipboard is not unnamedplus"
+if ! rg -q 'clipboard=unnamed' "$options_tmp"; then
+  fail "clipboard is not unnamed"
 fi
 
 if [[ "$(uname -s)" == "Darwin" ]]; then
@@ -97,6 +98,22 @@ if [[ "$(uname -s)" == "Darwin" ]]; then
 
   if ! rg -q 'CopyVisualSelectionToMacClipboard' "$mapping_tmp"; then
     fail "visual macOS clipboard mapping is missing"
+  fi
+
+  vim -es -Nu "$repo_dir/vimrc" -i NONE \
+    -c 'enew' \
+    -c "call setline(1, ['alpha', 'beta'])" \
+    -c 'normal gg' \
+    -c 'normal yy' \
+    -c "redir! >$yank_tmp | echo &clipboard | echo getreg('0') | redir END" \
+    -c qall! >/dev/null 2>&1
+
+  yank_lines=("${(@f)$(awk 'NF { print }' "$yank_tmp")}")
+  if [[ "${yank_lines[1]:-}" != "unnamed" ]]; then
+    fail "clipboard option does not use the unnamed register on macOS"
+  fi
+  if [[ "${yank_lines[2]:-}" != "alpha" ]]; then
+    fail "yy does not populate register 0"
   fi
 fi
 

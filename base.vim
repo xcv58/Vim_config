@@ -52,7 +52,7 @@ set expandtab
 
 " Mac Clipboard
 if has('clipboard')
-  set clipboard=unnamedplus
+  set clipboard=unnamed
 endif
 
 " Undo persistence
