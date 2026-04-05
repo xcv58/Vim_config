@@ -15,13 +15,14 @@ options_tmp=$(mktemp /tmp/vim-config-review-options.XXXXXX.txt)
 syntax_tmp=$(mktemp /tmp/vim-config-review-syntax.XXXXXX.txt)
 startup_tmp=$(mktemp /tmp/vim-config-review-startup.XXXXXX.log)
 threshold_tmp=$(mktemp /tmp/vim-config-review-threshold.XXXXXX.txt)
+mapping_tmp=$(mktemp /tmp/vim-config-review-mapping.XXXXXX.txt)
 small_tmp=$(mktemp /tmp/vim-config-review-small.XXXXXX.txt)
 large_tmp=$(mktemp /tmp/vim-config-review-large.XXXXXX.txt)
 small_mode_tmp=$(mktemp /tmp/vim-config-review-small-mode.XXXXXX.txt)
 large_mode_tmp=$(mktemp /tmp/vim-config-review-large-mode.XXXXXX.txt)
 markdown_tmp=$(mktemp /tmp/vim-config-review-markdown.XXXXXX.md)
 markdown_startup_tmp=$(mktemp /tmp/vim-config-review-markdown-startup.XXXXXX.log)
-trap 'rm -f "$options_tmp" "$syntax_tmp" "$startup_tmp" "$threshold_tmp" "$small_tmp" "$large_tmp" "$small_mode_tmp" "$large_mode_tmp" "$markdown_tmp" "$markdown_startup_tmp"' EXIT
+trap 'rm -f "$options_tmp" "$syntax_tmp" "$startup_tmp" "$threshold_tmp" "$mapping_tmp" "$small_tmp" "$large_tmp" "$small_mode_tmp" "$large_mode_tmp" "$markdown_tmp" "$markdown_startup_tmp"' EXIT
 
 dd if=/dev/zero of="$small_tmp" bs=1m count=2 status=none
 dd if=/dev/zero of="$large_tmp" bs=1m count=11 status=none
@@ -87,6 +88,16 @@ fi
 
 if ! rg -q 'clipboard=unnamedplus' "$options_tmp"; then
   fail "clipboard is not unnamedplus"
+fi
+
+if [[ "$(uname -s)" == "Darwin" ]]; then
+  vim -es -Nu "$repo_dir/vimrc" -i NONE \
+    -c "redir! >$mapping_tmp | echo maparg('<Leader>y', 'x') | redir END" \
+    -c qall! >/dev/null 2>&1
+
+  if ! rg -q 'CopyVisualSelectionToMacClipboard' "$mapping_tmp"; then
+    fail "visual macOS clipboard mapping is missing"
+  fi
 fi
 
 vim -es -Nu "$repo_dir/vimrc" -i NONE \

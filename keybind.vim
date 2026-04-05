@@ -7,6 +7,32 @@ inoremap jk <Esc>
 " Quick save
 nnoremap <Leader>s :w<CR>
 
+" macOS clipboard fallback for visual selections
+if has('macunix') && executable('pbcopy')
+  function! s:CopyVisualSelectionToMacClipboard() abort
+    let l:save_z = getreg('z')
+    let l:save_ztype = getregtype('z')
+
+    silent normal! gv"zy
+    let l:text = getreg('z')
+
+    call setreg('z', l:save_z, l:save_ztype)
+    call system('pbcopy', l:text)
+
+    if v:shell_error != 0
+      echohl WarningMsg
+      echom 'pbcopy failed'
+      echohl None
+    endif
+  endfunction
+
+  xnoremap <silent> <Leader>y :<C-u>call <SID>CopyVisualSelectionToMacClipboard()<CR>
+
+  if has('gui_macvim')
+    xnoremap <silent> <D-c> :<C-u>call <SID>CopyVisualSelectionToMacClipboard()<CR>
+  endif
+endif
+
 " Buffers
 nnoremap <Leader>d :bn<cr>
 nnoremap <Leader>a :bp<cr>
